@@ -81,7 +81,7 @@ switch (command) {
   case 'create':
     console.log('Creating new repository with administrator ' + from)
 
-    web3.eth.contract(repoABI).new({ data: repoCode, from: from }, function (err, contract) {
+    web3.eth.contract(repoABI).new({ data: repoCode, from: from, gas: 2000000}, function (err, contract) {
       if (err) {
         console.log('Error: ' + err)
         return
